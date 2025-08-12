@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app-container {
+  display: flex;
+  justify-content: start;
+}
+
+.container-menu {
+  position: fixed;
+  z-index: 9999;
+  width: 250px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ol,
+ul {
+  padding: 0 !important;
+}
+
+.logo {
+  background-color: #470580;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 23px;
+  color: white;
+}
+
+.warehouse-menu {
+  height: 95vh;
+  background: linear-gradient(to bottom, #1e3a8a, #7e22ce);
+}
+
+.transparent-menu {
+  background: transparent !important;
+  border: none !important;
+}
+
+.transparent-menu .p-menuitem-text {
+  color: white !important;
+  font-size: 16px;
+}
+
+.transparent-menu .p-submenu-header {
+  background: transparent !important;
+  color: white !important;
+  font-size: 21px !important;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+}
+
+.transparent-menu .p-menuitem-link:hover {
+  background: rgba(100, 100, 100, 0.1) !important;
+}
+
+.active-menu-item {
+  background: rgba(100, 100, 100, 0.1) !important;
+  border-left: 3px solid white !important;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  width: 100%;
+}
+
+.content-header {
+  margin: 0 0 20px 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.table {
+  margin-top: 10px;
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding: 5px;
+  border: 1px solid;
+}
+
+.table-header th {
+  background-color: gray !important;
+  font-size: 18px;
+  text-align: left;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.p-button {
+  border-radius: 10px;
+}
+
+.p-button:hover {
+  filter: brightness(85%);
+}
+
+.button-add,
+.button-add {
+  background-color: #198754;
+}
+
+.button-archive {
+  background-color: #ffc107;
+}
+
+.button-worker,
+.button-apply {
+  background-color: #0d6efd;
+}
+
+.button-delete {
+  background-color: #dc3545;
+}
+
+.td-label {
+  width: 200px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  display: flex;
+}
+
+.filter {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-label {
+  width: 200px;
+  align-content: center;
+}
+
+/* Стили для спиннера */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loading-container.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading-message {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.calendar-no-button-bg .p-datepicker-trigger {
+  background: transparent !important;
+  border-radius: 0;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 1px solid #d1d5db !important;
+  border-bottom: 1px solid #d1d5db !important;
+  border-right: 1px solid #d1d5db !important;
+  border-left: none;
+  box-shadow: none !important;
+  color: black;
+}
+
+.calendar-no-button-bg .p-datepicker-trigger:hover {
+  background: transparent !important;
+}
+
+.calendar-no-button-bg {
+  width: 250px;
+}
+
+.p-calendar-filter {
+  width: 160px !important;
+}
+
+.p-calendar-w-btn-right .p-inputtext {
+  border-right: none !important;
+}
+
+.resources-data {
+  margin-top: 40px;
+}
+
+.table tr td,
+.table tr th {
+  align-content: center !important;
+}
