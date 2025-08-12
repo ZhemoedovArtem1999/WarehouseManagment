@@ -1,0 +1,58 @@
+<% 
+const apiName = "WarehouseManagment";
+%>
+import React, { createContext, ReactNode, useContext, useMemo } from "react";
+import * as ApiTypes from "./api/data-contracts";
+import { ApiConfig, HttpClient } from "./api/http-client";
+
+const <%= apiName %>ApiConfigContext = createContext<ApiConfig | undefined>(undefined);
+
+const use<%= apiName %>ApiConfig = () => useContext(<%= apiName %>ApiConfigContext);
+
+function use<%= apiName %>Api<ApiType extends HttpClient>(apiType: new (apiConfig: ApiConfig) => ApiType, apiConfig: ApiConfig = {}): ApiType {
+  const baseConfig = use<%= apiName %>ApiConfig();
+  
+  return useMemo(() => {
+    return new apiType({
+      ...baseConfig,
+      ...apiConfig,
+    } as ApiConfig);
+  }, [baseConfig, apiConfig]);
+}
+
+const <%= apiName %>Api = ({
+  apiAddress,
+  children,
+}: {
+  apiAddress: string;
+  children: ReactNode;
+}) => {
+  const apiConfig = useMemo(() => {
+    return {
+      baseUrl: apiAddress,
+      baseApiParams: {
+        secure: true,
+      },
+    };
+  }, [apiAddress]);
+  
+  return (
+    <<%= apiName %>ApiConfigContext.Provider value={apiConfig}>
+      {children}
+    </<%= apiName %>ApiConfigContext.Provider>
+  );
+};
+
+export { <%= apiName %>Api, ApiTypes as <%= apiName %>ApiTypes, use<%= apiName %>Api };
+
+<%
+const { utils, routes } = it;
+const { _, pascalCase } = utils;
+
+routes.combined.forEach((route) => { 
+    const apiClassName = pascalCase(_.endsWith(_.lowerCase(route.moduleName), "api") ? route.moduleName : `${route.moduleName}_api`);
+%>
+  export { <%= apiClassName %> } from "./api/<%= apiClassName %>";
+<% 
+})
+%>
